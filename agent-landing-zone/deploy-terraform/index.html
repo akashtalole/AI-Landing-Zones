@@ -6,33 +6,35 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Azure AI Landing Zones">
+        <meta name="description" content="Documentation for AI Landing Zones">
       
       
         <meta name="author" content="Microsoft">
       
       
       
-        <link rel="prev" href="../terraform/">
+        <link rel="prev" href="../deploy-bicep/">
       
+      
+        <link rel="next" href="../operations/">
       
       
         
       
       
-      <link rel="icon" href="../media/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../../media/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Portal installation - Azure AI Landing Zones</title>
+        <title>Terraform implementation status - AI Landing Zones</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#portal-implementation" class="md-skip">
+        <a href="#terraform-implementation-status" class="md-skip">
           Skip to content
         </a>
       
@@ -92,9 +94,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Azure AI Landing Zones" class="md-header__button md-logo" aria-label="Azure AI Landing Zones" data-md-component="logo">
+    <a href="../.." title="AI Landing Zones" class="md-header__button md-logo" aria-label="AI Landing Zones" data-md-component="logo">
       
-  <img src="../media/logo.svg" alt="logo">
+  <img src="../../media/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,13 +107,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Azure AI Landing Zones
+            AI Landing Zones
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Portal installation
+              Terraform implementation status
             
           </span>
         </div>
@@ -199,16 +201,14 @@
 
 
 
-  
-
-<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Azure AI Landing Zones" class="md-nav__button md-logo" aria-label="Azure AI Landing Zones" data-md-component="logo">
+    <a href="../.." title="AI Landing Zones" class="md-nav__button md-logo" aria-label="AI Landing Zones" data-md-component="logo">
       
-  <img src="../media/logo.svg" alt="logo">
+  <img src="../../media/logo.svg" alt="logo">
 
     </a>
-    Azure AI Landing Zones
+    AI Landing Zones
   </label>
   
     <div class="md-nav__source">
@@ -232,7 +232,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -259,7 +259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../whatisnew/" class="md-nav__link">
+      <a href="../../whatisnew/" class="md-nav__link">
         
   
   
@@ -333,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/design-checklist/" class="md-nav__link">
+      <a href="../../architecture/design-checklist/" class="md-nav__link">
         
   
   
@@ -361,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/cost-guide/" class="md-nav__link">
+      <a href="../../architecture/cost-guide/" class="md-nav__link">
         
   
   
@@ -389,7 +389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../architecture/faq/" class="md-nav__link">
+      <a href="../../architecture/faq/" class="md-nav__link">
         
   
   
@@ -421,18 +421,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -442,7 +444,7 @@
   <span class="md-ellipsis">
     
   
-    Bicep Implementation
+    Agent Landing Zone
   
 
     
@@ -453,12 +455,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Bicep Implementation
+    Agent Landing Zone
   
 
           </label>
@@ -471,7 +473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/overview/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -499,14 +501,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/deployed-resources/" class="md-nav__link">
+      <a href="../deploy-full-stack/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Deployed Resources & Cost
+    Deploy full stack
   
 
     
@@ -527,14 +529,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/how-to-deploy/" class="md-nav__link">
+      <a href="../deploy-infra-only/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    How to Deploy
+    Deploy infra only
   
 
     
@@ -555,14 +557,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/deploy-with-azure-devops/" class="md-nav__link">
+      <a href="../network-isolation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Deploy with Azure DevOps
+    Network isolation
   
 
     
@@ -583,14 +585,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/regional-considerations/" class="md-nav__link">
+      <a href="../hosted-agents/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Regional Considerations
+    Hosted agents
   
 
     
@@ -611,14 +613,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/hub-and-spoke/" class="md-nav__link">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Hub-and-Spoke Topology
+    Configuration
   
 
     
@@ -639,14 +641,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/public-ingress/" class="md-nav__link">
+      <a href="../build-your-own-app/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Public Ingress (App Gateway)
+    Custom applications
   
 
     
@@ -667,14 +669,161 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/permissions/" class="md-nav__link">
+      <a href="../deploy-bicep/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Permissions
+    Deploy with Bicep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform implementation status
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terraform implementation status
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-available-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is available today
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-parity-is-kept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How parity is kept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-terraform-for-the-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Terraform for the infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
   
 
     
@@ -695,42 +844,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../bicep/parameterization/" class="md-nav__link">
+      <a href="../troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Parameterization
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../bicep/accelerator-pattern/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Building Accelerators (Submodule Pattern)
+    Troubleshooting
   
 
     
@@ -758,7 +879,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terraform/" class="md-nav__link">
+      <a href="../../terraform/" class="md-nav__link">
         
   
   
@@ -782,19 +903,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../portal/Readme/" class="md-nav__link">
         
   
   
@@ -810,7 +922,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -821,6 +932,76 @@
                 </div>
               </div>
             
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-available-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is available today
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-parity-is-kept" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How parity is kept
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-terraform-for-the-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using Terraform for the infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
             
           
           
@@ -835,8 +1016,60 @@
   
 
 
-<h1 id="portal-implementation">Portal Implementation</h1>
-<p>Coming Soon</p>
+<h1 id="terraform-implementation-status">Terraform implementation status</h1>
+<p>Agent Landing Zone deploys with Bicep through <code>azd</code>. A Terraform implementation
+of the same infrastructure exists in AI Landing Zone, but the Agent Landing
+Zone deployment flow does not use it yet.</p>
+<h2 id="what-is-available-today">What is available today</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Bicep</th>
+<th>Terraform</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Infrastructure</td>
+<td>Supported through <code>azd up</code> and <code>azd provision</code></td>
+<td>Available as the AI Landing Zone Terraform implementation</td>
+</tr>
+<tr>
+<td>Post-provision configuration (roles, App Configuration, Search, Foundry)</td>
+<td>Runs automatically</td>
+<td>Not wired</td>
+</tr>
+<tr>
+<td>Application deploy</td>
+<td><code>azd deploy</code></td>
+<td>Not validated</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-parity-is-kept">How parity is kept</h2>
+<p>The Bicep and Terraform implementations are kept at the same infrastructure
+level through automated synchronization followed by human review. The
+<code>infra-terraform-parity.yml</code> workflow reports differences, and maintainers
+review each change before it is merged. See
+<a href="../../terraform-parity/">Terraform parity</a> for the current status.</p>
+<h2 id="using-terraform-for-the-infrastructure">Using Terraform for the infrastructure</h2>
+<p>You can deploy the infrastructure with the AI Landing Zone Terraform
+implementation and then deploy the applications yourself. This path is not
+validated. You must provide the same outputs that the Bicep deployment
+publishes, run the post-provision configuration, and run <code>azd deploy</code> against
+an environment that contains those values. Expect to debug missing settings.</p>
+<p>If you need a supported path today, use Bicep:</p>
+<ul>
+<li><a href="../deploy-full-stack/">Deploy full stack</a></li>
+<li><a href="../deploy-infra-only/">Deploy infra only</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="../../terraform/">Terraform implementation</a></li>
+<li><a href="../../terraform-parity/">Terraform parity</a></li>
+<li><a href="https://aka.ms/ailz/terraform">Terraform module</a></li>
+</ul>
 
 
 
@@ -884,10 +1117,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.icon", "content.iconify", "navigation.tracking", "toc.integrate", "content.code.annotate", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.icon", "content.iconify", "navigation.tracking", "content.code.annotate", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
